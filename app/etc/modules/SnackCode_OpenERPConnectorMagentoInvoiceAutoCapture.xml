@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
+            <active>true</active>
+            <codePool>local</codePool>
+        </SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
+    </modules>
+</config>

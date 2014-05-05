@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
+            <version>1.0.0.0</version>
+        </SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
+    </modules>
+    <global>
+        <models>
+            <snackcode_openerpconnectormagentoinvoiceautocapture>
+                <class>SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model</class>
+            </snackcode_openerpconnectormagentoinvoiceautocapture>
+        </models>
+        <events>
+            <sales_order_invoice_save_commit_after>
+                <observers>
+                    <snackcode_openerpconnectormagentoinvoiceautocapture>
+                        <class>SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model_Observer</class>
+                        <method>invoiceAutoCapture</method>
+                    </snackcode_openerpconnectormagentoinvoiceautocapture>
+                </observers>
+            </sales_order_invoice_save_commit_after>
+        </events>
+    </global>
+</config>
