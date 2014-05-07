@@ -17,7 +17,7 @@ class SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model_Observer
             $mail->setToName(Mage::getStoreConfig('trans_email/ident_support/name'));
             $mail->setToEmail(Mage::getStoreConfig('trans_email/ident_support/email'));
             $mail->setFromEmail(Mage::getStoreConfig('trans_email/ident_support/email'));
-            $mail->setFromName(Mage::getStoreConfig('dealers.xotic.us'));
+            $mail->setFromName(Mage::app()->getStore()->getName());
             $mail->setBody($body);
             $mail->setSubject($subject);
             $mail->setType('html');// You can use 'html' or 'text'
