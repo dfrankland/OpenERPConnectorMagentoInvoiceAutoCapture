@@ -30,7 +30,7 @@ class SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model_Observer
     }
     
     /*log every success or issue using email, mage log at /var/log/system.log, and also the order comments*/
-    protected function logEverything($subject,$body,$oid,$order)
+    protected function logEverything($subject,$body,$oid,$order,$payment,$invoice)
     {
         $oid = 'Order #'.$oid.' ';
         $this->sendEmail($oid.$subject,$body);
@@ -61,7 +61,7 @@ class SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model_Observer
                 $success = false;
                 $subject = 'OpenERP Connector - Magento: Invoice AutoCapture // Exception Message';
                 $body = $e->getMessage();
-                $this->logEverything($subject,$body,$orderId,$order);
+                $this->logEverything($subject,$body,$orderId,$order,$payment,$invoice);
             }
             if($success)
             {
@@ -76,7 +76,7 @@ class SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture_Model_Observer
         {
             $subject = 'OpenERP Connector - Magento: Invoice AutoCapture // Cannot Capture Paypal Payment!';
             $body = 'Authorization failed, or the invoice is not yet created. $invoice->canCapture()=false.';
-            $this->logEverything($subject,$body,$orderId,$order);
+            $this->logEverything($subject,$body,$orderId,$order,$payment,$invoice);
         }
         return $this;
     }
