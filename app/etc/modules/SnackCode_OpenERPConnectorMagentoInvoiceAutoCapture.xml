@@ -3,7 +3,7 @@
     <modules>
         <SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
         </SnackCode_OpenERPConnectorMagentoInvoiceAutoCapture>
     </modules>
 </config>
